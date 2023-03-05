@@ -1,10 +1,12 @@
 mod api;
+mod repository;
 
 use api::task:: {
     get_task
 }
 
 use actix_web::{HttpServer, App, web::Data, middleware::Logger};
+use::repository::ddb::DDBRepository;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
